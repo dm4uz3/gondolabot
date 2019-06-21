@@ -33,6 +33,9 @@ else:
 
 os.chdir('../videomp4')
 
+timeDelay = random.randrange(69, 2000)
+time.sleep(timeDelay)
+
 # everything below is copied from https://github.com/twitterdev/large-video-upload-python you can tell because it doesn't suck lol
 
 oauth = OAuth1(CONSUMER_KEY,
