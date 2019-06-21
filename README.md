@@ -1,4 +1,4 @@
 # gondolabot
-ebin twitter bot :D posts videos every hour :D
+ebin twitter bot :D posts videos  :D
 
 https://twitter.com/gondolabot
