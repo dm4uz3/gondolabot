@@ -6,8 +6,6 @@ import json
 import requests
 from requests_oauthlib import OAuth1
 
-# 99% of this is stolen from https://github.com/twitterdev/large-video-upload-python
-
 MEDIA_ENDPOINT_URL = 'https://upload.twitter.com/1.1/media/upload.json'
 POST_TWEET_URL = 'https://api.twitter.com/1.1/statuses/update.json'
 
@@ -22,6 +20,8 @@ TWEET_TEXT = VIDEO_FILENAME
 TWEET_TEXT = re.sub('\.mp4$', '.webm', TWEET_TEXT)
 
 print(TWEET_TEXT)
+
+# everything below is copied from https://github.com/twitterdev/large-video-upload-python lol
 
 oauth = OAuth1(CONSUMER_KEY,
   client_secret=CONSUMER_SECRET,
