@@ -19,9 +19,21 @@ VIDEO_FILENAME = random.choice(os.listdir('.'))
 TWEET_TEXT = VIDEO_FILENAME
 TWEET_TEXT = re.sub('\.mp4$', '.webm', TWEET_TEXT)
 
-print(TWEET_TEXT)
+os.chdir('../sources')
 
-# everything below is copied from https://github.com/twitterdev/large-video-upload-python lol
+exists = os.path.isfile(TWEET_TEXT)
+
+if exists:
+  f = open(TWEET_TEXT, 'r')
+  sauce = f.read()
+  TWEET_TEXT = (TWEET_TEXT+'\n'+'\n'+sauce)
+  print(TWEET_TEXT)
+else:
+  print(TWEET_TEXT)
+
+os.chdir('../videomp4')
+
+# everything below is copied from https://github.com/twitterdev/large-video-upload-python you can tell because it doesn't suck lol
 
 oauth = OAuth1(CONSUMER_KEY,
   client_secret=CONSUMER_SECRET,
